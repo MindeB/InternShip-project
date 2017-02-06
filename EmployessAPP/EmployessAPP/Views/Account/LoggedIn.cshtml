@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+@if (Session["UserID"] != null)
+{
+    <h2>Hello @Session["Username"].ToString()</h2>
+}
+
+@if (Session["Role"].ToString() == "Admin")
+{
+    <h2>Logged as Admin</h2>
+}
+@if (Session["Role"].ToString() == "Moderator")
+{
+    <h2>Logged as Moderator </h2>
+}
+@if (Session["Role"].ToString() == null)
+{
+    <h5>Logged as User</h5>
+}
+    
